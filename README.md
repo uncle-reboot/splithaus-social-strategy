@@ -1,6 +1,6 @@
 # SplitHaus: The Houses (organic social strategy)
 
-Draft v3, Sep 25 2026. Internal.
+Draft v4, Sep 25 2026. Internal.
 
 **View in browser:** https://uncle-reboot.github.io/splithaus-social-strategy/
 
