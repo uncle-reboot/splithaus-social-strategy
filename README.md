@@ -1,6 +1,7 @@
-# SplitHaus — The Houses (organic social strategy)
+# SplitHaus: The Houses (organic social strategy)
 
-Draft v2, Sep 25 2026. Internal.
+Draft v3, Sep 25 2026. Internal.
 
-- `index.html` — full strategy doc (self-contained; download and open in a browser)
-- `strategy-v2.md` — text summary
+**View in browser:** https://uncle-reboot.github.io/splithaus-social-strategy/
+
+Built from `build_v3.py` (canon data for houses, characters, series, episodes).
