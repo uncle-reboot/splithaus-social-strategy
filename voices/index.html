@@ -1,0 +1,38 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SplitHaus: narrator voice test (ElevenLabs alternatives)</title>
+<style>
+body{margin:0;background:#faf6ee;color:#2f2a24;font:16px/1.55 Georgia,serif}.w{max-width:980px;margin:0 auto;padding:28px 22px 60px}
+h1{font-size:34px;margin:0 0 4px}h2{margin:34px 0 8px}.lede{color:#6f665c;font-size:18px}
+.card{background:#fffdf8;border:1px solid #e6dccb;border-radius:12px;padding:14px 16px;margin:10px 0}
+.card h4{margin:0 0 4px}.meta{font:13px system-ui,sans-serif;color:#6f665c}audio{width:100%;margin-top:8px}
+table{width:100%;border-collapse:collapse;background:#fffdf8;font-size:14.5px}th,td{border:1px solid #e6dccb;padding:8px 9px;text-align:left;vertical-align:top}th{background:#f2ebdf;font:600 12px system-ui;text-transform:uppercase}
+.tag{display:inline-block;font:700 11px system-ui;padding:3px 7px;border-radius:99px;background:#e4efe0;color:#35562a;margin-right:4px}.bad{background:#f6e1e6;color:#7d2e45}.mid{background:#fbe9d9;color:#8a4a1d}
+.call{background:#fff4e6;border-left:4px solid #b5562f;padding:12px 16px;border-radius:8px}
+</style></head><body><div class="w">
+<p class="meta"><a href="../">← back to The Houses strategy</a></p>
+<h1>Narrator voice test</h1>
+<p class="lede">Same line, same house, different engines. Listen for warmth, age and "old storyteller" feel. The first clip is our current ElevenLabs voice (Bill) as the reference.</p>
+<p class="meta">Line: "I've been this family's lake house since 1956. Seventy summers. One Fourth of July. And every spring, Ruth tries to make it fair." All clips generated Sep 28, 2026. Every one was transcribed back with Whisper, and all read the script correctly.</p>
+
+<h2>Reference: what we have now</h2>
+<div class="card"><h4>ElevenLabs "Bill" (free plan)</h4><span class="tag bad">not licensed for commercial use on the free plan</span><audio controls preload="none" src="elevenlabs_bill.mp3"></audio></div>
+
+<h2>Option A: xAI Grok TTS (paid API, we already have a key)</h2>
+<p class="meta">$15 per million characters. These four clips cost about one cent together. A whole 35-second episode is about $0.01.</p>
+<div class="card"><h4>xAI "Atlas"</h4><audio controls preload="none" src="xai_atlas.mp3"></audio></div>
+<div class="card"><h4>xAI "Helios"</h4><audio controls preload="none" src="xai_helios.mp3"></audio></div>
+<div class="card"><h4>xAI "Leo"</h4><audio controls preload="none" src="xai_leo.mp3"></audio></div>
+<div class="card"><h4>xAI "Altair"</h4><audio controls preload="none" src="xai_altair.mp3"></audio></div>
+
+<h2>Option B: Kokoro (open source, Apache 2.0, free, runs on our server)</h2>
+<p class="meta">Ran on this machine's CPU, no GPU: about 11 seconds of audio in 2 seconds. Fixed set of voices; no cloning.</p>
+<div class="card"><h4>Kokoro "Lewis" (British male)</h4><audio controls preload="none" src="kokoro_bm_lewis.mp3"></audio></div>
+<div class="card"><h4>Kokoro "George" (British male)</h4><audio controls preload="none" src="kokoro_bm_george.mp3"></audio></div>
+<div class="card"><h4>Kokoro "Fenrir" (American male)</h4><audio controls preload="none" src="kokoro_am_fenrir.mp3"></audio></div>
+
+<h2>Option C: Chatterbox (open source, MIT, free, runs on our server, can clone a voice)</h2>
+<p class="meta">Ran on CPU: about 9 seconds of audio in 30–36 seconds. Slow but fine for 35-second episodes. Adds an inaudible watermark (good for AI disclosure).</p>
+<div class="card"><h4>Chatterbox default voice</h4><audio controls preload="none" src="chatterbox_default.mp3"></audio></div>
+<div class="card"><h4>Chatterbox cloning a voice (from a 10-second sample)</h4><span class="tag mid">demo only: cloned from the Kokoro Lewis clip</span><audio controls preload="none" src="chatterbox_clone_lewis.mp3"></audio>
+<p class="meta">In production we'd clone from a hired voice actor's 30-second recording (with a signed release), giving each house its own consistent, owned voice for free.</p></div>
+</div></body></html>
