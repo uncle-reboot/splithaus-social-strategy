@@ -1,9 +1,9 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SplitHaus: video model test (Seedance vs Wan 2.2 vs LTX-2.3)</title>
+<title>SplitHaus: video model test (Seedance vs Grok 1.5 vs Wan 2.2 vs LTX-2.3)</title>
 <style>
 body{margin:0;background:#faf6ee;color:#2f2a24;font:16px/1.55 Georgia,serif}.w{max-width:1100px;margin:0 auto;padding:28px 22px 60px}
 h1{font-size:32px;margin:0 0 4px}h2{margin:34px 0 6px}.lede{color:#6f665c;font-size:18px}.meta{font:13px system-ui,sans-serif;color:#6f665c}
-.row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{background:#fffdf8;border:1px solid #e6dccb;border-radius:12px;padding:10px}
+.row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{background:#fffdf8;border:1px solid #e6dccb;border-radius:12px;padding:10px}
 .card h4{margin:2px 0 6px;font:700 15px system-ui}video{width:100%;border-radius:8px;background:#000}
 .tag{display:inline-block;font:700 11px system-ui;padding:3px 7px;border-radius:99px;margin:4px 4px 0 0}.g{background:#e4efe0;color:#35562a}.m{background:#fbe9d9;color:#8a4a1d}.b{background:#f6e1e6;color:#7d2e45}
 table{width:100%;border-collapse:collapse;background:#fffdf8;font-size:14.5px;margin-top:10px}th,td{border:1px solid #e6dccb;padding:8px;text-align:left;vertical-align:top}th{background:#f2ebdf;font:600 12px system-ui;text-transform:uppercase}
@@ -11,12 +11,13 @@ table{width:100%;border-collapse:collapse;background:#fffdf8;font-size:14.5px;ma
 </style></head><body><div class="w">
 <p class="meta"><a href="../">← back to The Houses strategy</a> · <a href="../voices/">voice test</a></p>
 <h1>Video model test</h1>
-<p class="lede">Same still image, same prompt, three models, all run on fal on Sep 28, 2026. Seedance is what Episode 1 used; Wan 2.2 and LTX-2.3 are the open-source candidates.</p>
+<p class="lede">Same still image, same prompt, three models, run Sep 28, 2026 (Grok on x.ai, the rest on fal). Seedance is what Episode 1 used; Grok Imagine 1.5 runs on our x.ai account; Wan 2.2 and LTX-2.3 are the open-source candidates.</p>
 <p class="meta">Press play on each. The clips loop and are muted. Wan runs at 16 fps with smoothing; LTX was rendered at 1080p and scaled down to 720p here for a fair comparison.</p>
 
 <h2>1 · Wide shot: the cabin and the loon</h2>
 <div class="row">
 <div class="card"><h4>Seedance 2.0 (closed) · $1.52</h4><video controls loop muted playsinline preload="metadata" src="c1_seedance.mp4"></video></div>
+<div class="card"><h4>Grok Imagine 1.5 (closed, x.ai) · $0.71</h4><video controls loop muted playsinline preload="metadata" src="c1_grok15.mp4"></video></div>
 <div class="card"><h4>Wan 2.2 (open, Apache 2.0) · $0.40</h4><video controls loop muted playsinline preload="metadata" src="c1_wan.mp4"></video></div>
 <div class="card"><h4>LTX-2.3 (open, free under $10M revenue) · $0.48</h4><video controls loop muted playsinline preload="metadata" src="c1_ltx.mp4"></video></div>
 </div>
@@ -24,15 +25,16 @@ table{width:100%;border-collapse:collapse;background:#fffdf8;font-size:14.5px;ma
 <h2>2 · Character close-up: June on the swing</h2>
 <div class="row">
 <div class="card"><h4>Seedance 2.0 · $1.21 (4s)</h4><video controls loop muted playsinline preload="metadata" src="c5_seedance.mp4"></video></div>
+<div class="card"><h4>Grok Imagine 1.5 · $0.71</h4><video controls loop muted playsinline preload="metadata" src="c5_grok15.mp4"></video></div>
 <div class="card"><h4>Wan 2.2 · $0.40</h4><video controls loop muted playsinline preload="metadata" src="c5_wan.mp4"></video></div>
 <div class="card"><h4>LTX-2.3 · $0.48 (6s)</h4><video controls loop muted playsinline preload="metadata" src="c5_ltx.mp4"></video></div>
 </div>
 
 <h2>What the frame checks found</h2>
-<table><tr><th></th><th>Seedance 2.0</th><th>Wan 2.2</th><th>LTX-2.3</th></tr>
-<tr><td><strong>Wide shot</strong></td><td>Stable</td><td><span class="tag b">fails</span> Around 2.5s the loon leaves the water and ends up on the rocks; a second red canoe appears around 1.8s</td><td>Loon stays on the water; small jumps in its position, and the camera reframes around 3s</td></tr>
-<tr><td><strong>Close-up face</strong></td><td><span class="tag g">best</span> Smallest face change; felt look holds</td><td><span class="tag b">weakest</span> Eyes go from open to nearly closed; face drifts</td><td><span class="tag m">middle</span> Head turns; expression shifts</td></tr>
-<tr><td><strong>Close-up hands</strong></td><td>Clean</td><td>One hand smudges near the end</td><td>Clean in the first and last frames</td></tr>
-<tr><td><strong>Price per 5s</strong></td><td>$1.52</td><td>$0.40</td><td>$0.40 (sold in 6s clips, $0.48)</td></tr></table>
+<table><tr><th></th><th>Seedance 2.0</th><th>Grok Imagine 1.5</th><th>Wan 2.2</th><th>LTX-2.3</th></tr>
+<tr><td><strong>Wide shot</strong></td><td>Stable</td><td><span class="tag g">good</span> Loon stays on the water; 1 canoe, 2 chairs throughout; slight roof warp and a smoother, more CG look in the last second</td><td><span class="tag b">fails</span> Around 2.5s the loon leaves the water and ends up on the rocks; a second red canoe appears around 1.8s</td><td>Loon stays on the water; small jumps in its position, and the camera reframes around 3s</td></tr>
+<tr><td><strong>Close-up face</strong></td><td><span class="tag g">best</span> Smallest face change; felt look holds</td><td><span class="tag m">acts more</span> Face stays June; expression turns from smiling to sad, chin on hand (not what was asked)</td><td><span class="tag b">weakest</span> Eyes go from open to nearly closed; face drifts</td><td><span class="tag m">middle</span> Head turns; expression shifts</td></tr>
+<tr><td><strong>Close-up hands</strong></td><td>Some finger glitches mid-clip in a 12-frame check</td><td><span class="tag b">weak</span> Fingers glitch from ~2s; the cane disappears at ~2.7s</td><td>One hand smudges near the end</td><td>Clean in the first and last frames</td></tr>
+<tr><td><strong>Price per 5s</strong></td><td>$1.52</td><td>$0.71 (x.ai billed; not the $0.40 the docs imply)</td><td>$0.40</td><td>$0.40 (sold in 6s clips, $0.48)</td></tr></table>
 <p class="meta">Correction: my first frame checks compared only the first and last frames and missed the loon walking onto land mid-clip in the Wan version. Spotted by eye; confirmed with a 12-frame check.</p>
 </div></body></html>
